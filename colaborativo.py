@@ -1,7 +1,7 @@
-#Nombre:
-#Matricula:
-#Grupo:
-#Fecha:
+#Nombre: 
+#Matricula: 
+#Grupo: 
+#Fecha: 
 import random
 
 # Datos para generar nombres y ubicaciones
@@ -18,6 +18,11 @@ class Persona:
 
     def __repr__(self):
         return f"Nombre: {self.nombre}, Ubicación: {self.ubicacion}, Intereses: {', '.join(self.intereses)}"
+
+    def mostrar_detalle(self):
+        print(f"Nombre: {self.nombre}")
+        print(f"Ubicación: {self.ubicacion}")
+        print(f"Intereses: {', '.join(self.intereses)}")
 
 # Seleccionar 10 personas con intereses aleatorios de los datos definidos inicialmente
 personas = []
@@ -40,7 +45,8 @@ def filtrar_colaborativo(persona, personas):
 # Mostrar todas las personas
 print("Lista de personas generadas:")
 for persona in personas:
-    print(persona)
+    persona.mostrar_detalle()
+    print()
 
 # Seleccionamos una persona para hacer el filtrado colaborativo
 persona_a_filtrar = random.choice(personas)
